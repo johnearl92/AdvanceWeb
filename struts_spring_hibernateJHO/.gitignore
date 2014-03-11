@@ -1,0 +1,28 @@
+# --------------------------------------------------------------------------------
+# GIT IGNORE CONFIGURATION
+# --------------------------------------------------------------------------------
+
+# [Server-side ignore paths]
+
+# Ignore /target folder
+# /target folder contains the generated .class files from default java compiler
+# as well as other test outputs
+/target
+
+# Ignore compiled classes and libs
+# Classes must be compiled per machine, jars must be retrieved fresh from maven repo
+/src/main/webapp/WEB-INF/classes
+/src/main/webapp/WEB-INF/lib
+
+
+# [Client-side ignore paths]
+
+# Ignore scripts
+# Dependency scripts must be downloaded via bower 'bower install 'to ensure
+# correct and unbiased files and custom created scripts must be compiled
+# always per dev machine
+/src/main/webapp/scripts
+
+# Ignore node dependencies
+# node package dependencies should be download via 'npm install'
+/node_modules

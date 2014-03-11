@@ -1,0 +1,4 @@
+[{"date":"09/26/2013", "isOpen" : true, "items" :[{"id":"1", "itemName": "buwad", "itemStatus": true, "editable":false}, {"id":"2", "itemName": "suka", "itemStatus": true, "editable":false}]},
+    {"date":"09/25/2013", "isOpen" : false, "items" :[{"id":"3", "itemName": "sili", "itemStatus": true, "editable":false}, {"id":"4", "itemName": "mango", "itemStatus": false, "editable":false}]},
+    {"date":"09/22/2013",  "isOpen" : false, "items" :[{"id":"5", "itemName": "bread", "itemStatus": false, "editable":false},{"id":"6", "itemName": "pineapple", "itemStatus": false, "editable":false}]}
+   ]

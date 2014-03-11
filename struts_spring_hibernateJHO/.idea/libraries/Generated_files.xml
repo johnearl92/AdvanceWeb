@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/src/test/typescript/test-spec.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/main.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/controller/GroceryController.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/service/PlaneSeatService.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/service/GroceryServiceModule.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/controller/PlaneSeatController.js" />
+        <item url="file://$PROJECT_DIR$/src/test/typescript/service/sample/TestTodoServiceSpec.js" />
+        <item url="file://$PROJECT_DIR$/src/main/typescript/main/model/PlaneSeatModel.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/test/typescript/test-spec.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/main.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/controller/GroceryController.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/service/GroceryServiceModule.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/service/PlaneSeatService.js" />
+      <root url="file://$PROJECT_DIR$/src/test/typescript/service/sample/TestTodoServiceSpec.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/controller/PlaneSeatController.js" />
+      <root url="file://$PROJECT_DIR$/src/main/typescript/main/model/PlaneSeatModel.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

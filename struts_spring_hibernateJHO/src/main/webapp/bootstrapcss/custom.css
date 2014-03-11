@@ -1,0 +1,101 @@
+html,body{
+	height:100%;
+
+}
+
+.padding{
+	padding-top: 10px;
+}
+.pInfoG{
+	padding-top: 4.8%;
+}/*
+.gender{
+	padding-right: auto;
+	padding-left: 20%;
+}*/
+
+.gridStyle {
+    /*border: 1px solid rgb(212,212,212);*/
+    width: 100%;
+    height:25em;
+}
+.glass {
+  margin-top: 2%;
+  z-index:10;
+  padding: 10px 10px 10px 10px;
+  border-radius:5px;
+  border-bottom: 1px solid;
+  border-bottom-color: #ccc;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 1.0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+}
+
+.book{
+	margin-top: 13%;
+}
+
+.overlay{
+	height: 99.98%;
+	width: 100%;
+	background: transparent url("/struts_spring_hibernate/bootstrapcss/images/overlay.png");
+	background-repeat:repeat; 
+	position:relative;
+	z-index: 2;
+	background-attachment: fixed;
+}
+
+
+.head{
+	/*background-image: url('images/Blue_Clouds.jpg');*/
+	background-color: #444;
+	position: absolute;	
+	top:0;
+	width: 100%;
+	height: 99.98%;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	background-attachment: fixed;
+}
+
+
+.newstray{
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: auto;
+	border-radius: 3px;
+	height:92%;
+	max-height:92%;
+	z-index:999;
+}
+
+
+
+hr{
+	border-color: #aaa;
+}
+
+.hero{
+
+  position:absolute;
+  top:0;
+  overflow-y:auto;
+  z-index: 10;	
+  height: 96%;
+}
+
+a{
+	color:#362819;	
+}
+a:hover{
+	color:#362819;	
+}
+.content{
+	margin-top: 13%;
+	height: 73%;
+}

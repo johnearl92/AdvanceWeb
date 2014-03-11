@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.7.dtd">
+<struts>
+
+    <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+    <constant name="struts.objectFactory.spring.autoWire" value="auto" />
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <include file="example.xml"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">showAll</param>
+                <param name="namespace">/grocery</param>
+            </result>
+        </action>
+
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+	<package name="showcase" extends="struts-default,json-default" namespace="/">
+	</package>
+	<!-- eldon Add package -->
+	<package name="grocery" namespace="/airline" extends="struts-default,json-default"/>
+
+</struts>

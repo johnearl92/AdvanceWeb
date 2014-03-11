@@ -1,0 +1,34 @@
+* Initialize Maven Project
+
+	mvn archetype:generate -DarchetypeCatalog=http://struts.apache.org/2.3.1/
+
+* Initialize Eclipse
+
+	mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo
+	mvn eclipse:eclipse 
+
+* Add [M2_REPO] in Eclipse
+
+    Eclipse -> Windows -> Preferences -> Java -> Build Path -> Class Variables
+    New
+      Name: M2_REPO
+      Path: %USER_HOME%\.m2\repository
+            (Example: C:\Users\User-Hp003\.m2\repository)
+
+* Install m2eclipse plugin
+
+* Import Project to Eclipse
+
+* Uninstall nodejs. Nodejs folder must not exist in Program Files folder.
+  IMPORTATNT: Latest nodejs must be used
+  Install nodejs.
+    Installation via chocolatey "chocolatey install nodejs.install"
+
+* Run via jetty (currently running in port 8081)
+  > mvn clean compile test jetty:run
+
+* Run via tomcat (default running in 8080)
+  > mvn clean compile test tomcat:run
+
+* Run via tomcat at port 8081
+  > mvn clean compile test tomcat:run -Dmaven.tomcat.port=8081

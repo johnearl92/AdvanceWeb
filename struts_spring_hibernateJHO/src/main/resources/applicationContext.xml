@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx
+		   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- ========================================================================================== -->
+	<!-- [LOAD PROPERTIES FILE] -->
+	<!-- ========================================================================================== -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:database.properties</value>
+		</property>
+	</bean>
+
+	<!-- ========================================================================================== -->
+	<!-- [CREATE CENTRAL DATASOURCE] -->
+	<!-- ========================================================================================== -->
+	
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- ========================================================================================== -->
+	<!-- [ENABLE CONFIGURATIOON TRANSACTIONAL BEHAVIOR] -->
+	<!-- ========================================================================================== -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager"/>							 -->
+
+
+	<!-- ========================================================================================== -->
+	<!-- [DECLARE SPRING TRANSACTION MANAGER] -->
+	<!-- ========================================================================================== -->
+	<!--
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	    <property name="dataSource" ref="dataSource"/>
+	</bean>
+	-->
+
+	<!-- ========================================================================================== -->
+	<!-- [CREATE HIBERNATE SESSION FACTORY] -->
+	<!-- ========================================================================================== -->
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		
+		<property name="annotatedClasses">
+			<list>
+				<value>com.rococo.global.model.grocery.GroceryModel</value>
+				<value>com.rococo.global.model.grocery.CompositePK</value>
+				<value>com.rococo.global.model.grocery.Passenger</value>
+				<value>com.rococo.global.model.grocery.PassengerList</value>
+				<value>com.rococo.global.model.grocery.Plane</value>
+			</list>
+    	</property>
+	</bean>
+
+	<!-- Auto scan the components -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.rococo.global.model" />
+	
+	
+	
+	<!-- ========================================================================================== -->
+	<!-- [USER-DEFINED DAO BEANS] -->
+	<!-- ========================================================================================== -->
+	<bean id="passengerDao" name="passengerDao"
+		class="com.rococo.global.dao.grocery.PassengerDaoImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	<bean id="addPassengerService" name="addPassengerService"
+		class="com.rococo.global.service.grocery.AddPassengerServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	
+	<bean id="passengerListDao" name="passengerListDao"
+	class="com.rococo.global.dao.grocery.PassengerListDaoImpl">
+	<description>DAO Implementation Layer</description>
+	</bean> 
+	<bean id="getPassengerService" name="getPassengerService"
+		class="com.rococo.global.service.grocery.GetPassengerServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean> 
+	
+	<bean id="planeService" name="planeService"
+		class = "com.rococo.global.service.grocery.PlaneServiceImpl">
+		<description>Service Implementation Layer</description>
+	</bean>
+	
+	<bean id="planeDao" name="planeDao"
+		class="com.rococo.global.dao.grocery.PlaneDaoImpl">
+		<description>Dao Implementation</description>
+	</bean>
+	<!-- <bean id="groceryDao" name="groceryDao"
+		class="com.rococo.global.dao.grocery.GroceryDaoImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	<bean id="getService" name="getListService"
+		class="com.rococo.global.service.grocery.GetServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	<bean id="addService" name="addService"
+		class="com.rococo.global.service.grocery.AddServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	<bean id="deleteService" name="deleteService"
+		class="com.rococo.global.service.grocery.DeleteServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean>
+	<bean id="updateService" name="updateService"
+		class="com.rococo.global.service.grocery.UpdateServiceImpl">
+		<description>DAO Implementation Layer</description>
+	</bean> -->
+</beans>
